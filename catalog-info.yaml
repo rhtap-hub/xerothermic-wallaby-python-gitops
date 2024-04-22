@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: xerothermic-wallaby-python-gitops
+  description: This is GitOps manifest for xerothermic-wallaby-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: xerothermic-wallaby-python
+    janus-idp.io/tekton: xerothermic-wallaby-python 
+    backstage.io/kubernetes-id: xerothermic-wallaby-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:xerothermic-wallaby-python
